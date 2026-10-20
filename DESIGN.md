@@ -1,34 +1,27 @@
-# VEIL art direction
+# VEIL, second edition
 
-## The idea
+The bottle is the protagonist. A quieter peach and porcelain palette, editorial Instrument Serif, a sage botanical photograph and a much larger texture chapter establish a tactile skincare world.
 
-A generous amount of empty space, and one object worth looking at. The bottle tells the story of a simple skincare routine. Its volume, pump construction, soft ceramic cap, paper label and translucent body provide the visual hierarchy. Peach, porcelain and warm brown support the object without decorative noise.
+## Scene construction
 
-Instrument Serif gives the voice an intimate editorial quality. DM Sans keeps ingredients, controls and labels precise. Both fonts are stored locally under the SIL Open Font License.
+The lathed coated-resin body has fine side ribs, a separate metallic collar, sculpted pump, base ring and a curved printed label. Coated resin replaces the earlier transmissive shell. There are zero transmission materials and therefore no transmission buffer. Broad studio reflections supply a bright edge and readable material. The label uses unlit print so its ink stays legible.
 
-## Story map
+Thirty ingredient pearls share one InstancedMesh. They travel around the same bottle and a helical line marks their path. The pump rises with composition, then closes again. Native scroll controls the poses and chapter indicator. The texture chapter moves to a close crop rather than repeating the hero scale. Reverse scroll is deterministic. Reduced motion keeps the object assembled, fixes its angle and disables the pearl movement.
 
-| Native scroll chapter | Object and cause | Reader action |
-| --- | --- | --- |
-| 01 | A complete bottle at a slight angle, oversized soft wordmark behind it | Explore the composition |
-| 02 | The pump lifts and ingredient drops leave the body as the bottle crosses to the left | Read what the ingredients are |
-| 03 | The object returns to a more substantial scale. Variant colour changes body and inner material | Choose Calm, Dew or Restore |
-| 04 | The bottle settles and leaves room for the ritual invitation | Build and save a daily routine |
+## Real imagery
 
-The object is a lathed vessel with a separate physical inner material, multi-part pump, collar, translucent stem, curved label and base ring. The paper and glass have different roughness. The environment is an original generated studio map with broad reflection panels. There are no borrowed models or product photographs.
+The botanical pause uses a locally stored, visually inspected photograph by Jonas Von Werne. It is licensed for website use under the Unsplash License. Its source and dimensions are listed in assets/LICENSES.md. Mobile uses an independent photograph crop above the text.
 
-## Motion architecture
+## Performance
 
-The browser owns scrolling. The story's native position maps to a single 0 to 3 coordinate. The same coordinate drives the product poses and progress indicator. Each property interpolates between explicit keyframes with smoothstep. Animation time only adds a small optional idle displacement. It does not advance the story. Reverse scrolling restores the same poses.
+Rendering is demand-driven in render-control.js. There is no idle animation loop. Scroll, pointer, variant changes and resize queue one frame. Offscreen and hidden states cancel pending RAF. Visibility restoration only requests a fresh frame.
 
-Mobile gets a lower, smaller object and a text composition above it. Reduced motion fixes object position and angle, closes the pump, disables ingredient movement and pointer parallax, and places all desktop chapter copy on the left.
+Antialiasing is enabled. The initial DPR cap is 1.4 with budgets of 2.2 million physical pixels on desktop and 0.95 million on mobile. Quality reduction excludes the first ten frames and requires 15 of 20 consecutive active submission frames above 28 ms. A pause over 250 ms resets the sample. This is a CPU submission heuristic, not GPU FPS.
 
-## Working product path
+Root dataset diagnostics: renderFrames, drawCalls, triangles, renderDpr and renderMode. Idle and offscreen counters must remain unchanged until a meaningful invalidation.
 
-Product choice in the scene and ritual builder stays synchronised. A saved summary includes the actual current selections. No simulated purchase or successful submission appears. Ingredient descriptions remain general; the page makes no fabricated efficacy claims.
+## Working path
 
-## Budget and verification
+Calm, Dew and Restore stay synchronised with the ritual builder. Morning, evening, skin feel and product update the actual exported note. There are no invented purchases or medical efficacy results. The CSS fallback preserves the page if WebGL is unavailable.
 
-Pixel ratio is capped at 1.6. There is one renderer, no post-processing and no shadow-map passes. The renderer skips work when the story is outside the viewport or the document is hidden. Hardware performance claims require measurement on the intended device.
-
-Review the initial desktop frame, each intermediate transition, reverse scroll, 390 px mobile composition, native radio and range keyboard access, selected product synchronisation, saved file contents, reduced motion and disabled WebGL. Code parsing verifies syntax only.
+The integrating agent checks desktop, mobile, transition midpoints, reverse motion, reduced motion, WebGL fallback, controls and export against the exact release. Source inspection alone does not constitute a visual pass.

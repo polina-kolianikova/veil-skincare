@@ -10,7 +10,7 @@ There is no build step, package installation, runtime CDN, API key or remote fon
 
 ## Interactions
 
-Native scrolling drives four reversible chapters: the finished product, an open composition, texture and variants, and the daily ritual. The sculpted bottle, pump, paper label, ingredient drops and studio environment are generated locally.
+Native scrolling drives four reversible chapters: the finished product, an open composition, texture and variants, and the daily ritual. The sculpted coated-resin bottle, pump, paper label, instanced ingredient pearls and studio environment are generated locally. A separate botanical photograph is stored locally with attribution.
 
 Calm, Dew and Restore update the 3D bottle and ritual selection. The builder accepts morning or evening, skin feel and product. Its three steps and notes change immediately. The save button downloads a readable text summary. It does not submit a form or create an account.
 
@@ -20,7 +20,7 @@ The site includes semantic headings, native inputs, visible focus, keyboard-acce
 
 ## Boundaries
 
-VEIL is a fictional portfolio concept. There is no real product inventory, payment, delivery or medical recommendation. All visuals are original procedural geometry or CSS. Font and Three.js licenses are recorded in `assets/LICENSES.md`.
+VEIL is a fictional portfolio concept. There is no real product inventory, payment, delivery or medical recommendation. Product visuals are original procedural geometry or CSS. The botanical interlude is a licensed photograph. Font and Three.js licenses are recorded in `assets/LICENSES.md`.
 
 ## Checks
 
