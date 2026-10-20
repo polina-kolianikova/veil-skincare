@@ -1,8 +1,1357 @@
-@font-face{font-family:Instrument;src:url('./assets/fonts/InstrumentSerif-Regular.ttf') format('truetype');font-weight:400;font-display:swap}@font-face{font-family:Instrument;src:url('./assets/fonts/InstrumentSerif-Italic.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap}@font-face{font-family:DM;src:url('./assets/fonts/DMSans.ttf') format('truetype');font-weight:100 900;font-display:swap}
-:root{--ink:#493b33;--paper:#eddfd4;--muted:#816e62;--line:rgba(73,59,51,.23);--peach:#dba99a;--serif:Instrument,Georgia,serif;--sans:DM,Arial,sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;-webkit-font-smoothing:antialiased}body:after{content:'';position:fixed;z-index:30;pointer-events:none;inset:0;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.8' filter='url(%23n)'/%3E%3C/svg%3E")}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{color:inherit}button,a,input{outline-offset:5px}a:focus-visible,button:focus-visible{outline:2px solid var(--ink)}.skip{position:fixed;left:20px;top:-90px;background:var(--ink);color:white;padding:15px;z-index:100}.skip:focus{top:12px}.header{height:100px;padding:0 4.4%;position:absolute;top:0;left:0;width:100%;z-index:20;display:flex;align-items:center;gap:42px}.wordmark{font-family:var(--serif);font-size:49px;line-height:1;letter-spacing:-3px;position:relative}.wordmark>span{font-family:var(--sans);letter-spacing:0;font-size:9px;position:absolute;right:-12px;top:4px}.header-note{font-size:11px;color:var(--muted);padding-top:9px}.header nav{margin-left:auto;display:flex;align-items:center;gap:34px;font-size:11px}.pill{border:1px solid var(--line);border-radius:40px;padding:13px 18px;display:flex;gap:25px;align-items:center}.pill:hover{background:var(--ink);color:var(--paper)}.story{position:relative}.scene{position:sticky;top:0;height:100svh;min-height:650px;margin-bottom:-100svh;background:radial-gradient(ellipse at 55% 42%,#f8eae2 0,#eddfd4 57%,#dac6b6 100%);overflow:hidden}.scene-word{position:absolute;font-family:var(--serif);font-size:clamp(260px,42vw,760px);line-height:.7;letter-spacing:-.075em;color:#fff6ef;opacity:.55;top:37%;left:44%;transform:translateX(-13%);user-select:none}.scene canvas{position:absolute;inset:0;width:100%;height:100%;z-index:2}.fallback-product{position:absolute;left:63%;top:27%;height:360px;width:145px;transform:rotate(15deg);z-index:1;filter:drop-shadow(20px 35px 20px #50301a2c)}.fallback-bottle{height:285px;position:absolute;bottom:0;width:145px;background:linear-gradient(100deg,#f4d5c2,#d4a58c 65%,#edc8ac);border-radius:30px 30px 25px 25px;text-align:center;box-shadow:inset 10px 0 20px #fff5,inset -6px 0 10px #5b37282a}.fallback-bottle b{display:block;font-family:var(--serif);font-size:43px;margin-top:62px;font-weight:400}.fallback-bottle span{font-size:8px;line-height:1.7}.fallback-neck{position:absolute;top:42px;left:49px;width:47px;height:40px;background:#c5b59c}.fallback-pump{position:absolute;top:12px;left:39px;height:42px;width:100px;border-radius:13px 14px 3px 4px;background:#f3eee5}.webgl .fallback-product{display:none}.specimen{position:absolute;z-index:3;right:6.5%;bottom:20%;display:flex;gap:18px;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;align-items:center}.specimen-line{height:1px;width:55px;background:var(--line)}.chapter-track{position:absolute;z-index:3;bottom:35px;left:4.4%;right:4.4%;display:flex;align-items:center;gap:25px;font-size:9px;letter-spacing:.15em}.chapter-track>div{height:1px;background:var(--line);flex:1}.chapter-track i{display:block;background:var(--ink);height:1px;width:0;transform-origin:left}.chapters{position:relative;z-index:4;pointer-events:none}.chapter{height:100svh;min-height:650px;position:relative;display:flex;align-items:center;padding:120px 8% 110px}.chapter-copy{max-width:560px}.eyebrow{font-size:10px;letter-spacing:.13em;line-height:1.6;text-transform:uppercase;font-weight:500}.tiny-star{font-size:16px;margin-right:12px;vertical-align:middle}h1,h2,p{margin-top:0}h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.045em;line-height:.94}h1{font-size:clamp(72px,7.8vw,128px);margin:32px 0 28px}h2{font-size:clamp(69px,7.3vw,116px);margin:26px 0}h1 em,h2 em{font-weight:400}.body-copy{font-size:14px;line-height:1.8;color:var(--muted);margin-bottom:32px}.chapter a,.chapter button{pointer-events:auto}.text-link{display:inline-flex;align-items:center;gap:37px;font-size:11px;padding-bottom:10px;border-bottom:1px solid var(--line)}.text-link span{font-size:18px}.text-link:hover{gap:47px}.margin-note{position:absolute;right:4.4%;top:125px;font-size:9px;line-height:1.7;text-align:right;color:var(--muted)}.scroll-cue{position:absolute;left:8%;bottom:84px;display:flex;gap:25px;align-items:center;font-size:8px;letter-spacing:.15em}.scroll-cue i{font-style:normal;font-size:24px;font-weight:200}.chapter-composition,.chapter-finish{justify-content:flex-end}.chapter-composition .chapter-copy{width:39%;max-width:500px}.ingredient-list{margin:30px 0 0;border-top:1px solid var(--line);width:100%}.ingredient-list>div{border-bottom:1px solid var(--line);padding:13px 0;display:flex;justify-content:space-between;align-items:center}.ingredient-list dt{font-size:9px;color:var(--muted)}.ingredient-list dt span{font-size:12px;margin-left:18px;color:var(--ink)}.ingredient-list dd{font-size:10px;margin-left:15px;color:var(--muted)}.chapter-side{position:absolute;left:4.4%;top:50%;font-size:9px;letter-spacing:.13em;writing-mode:vertical-rl;transform:rotate(180deg)}.variant-picker{display:flex;gap:8px;margin:35px 0 15px;pointer-events:auto}.variant{border:1px solid var(--line);border-radius:30px;padding:10px 16px 10px 11px;background:transparent;display:flex;align-items:center;gap:9px;font-size:11px;cursor:pointer;transition:background .2s}.variant.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}.swatch{display:block;height:13px;width:13px;border-radius:50%;box-shadow:inset 0 0 0 1px #fff3}.calm{background:#d9ac98}.dew{background:#b8c6b2}.restore{background:#b4a2b6}.variant-description{font-size:10px;color:var(--muted);line-height:1.5;max-width:300px}.texture-caption{position:absolute;right:5%;bottom:18%;font-size:8px;letter-spacing:.12em;line-height:1.8}.chapter-finish .chapter-copy{width:43%;max-width:550px}.solid-link{display:flex;justify-content:space-between;align-items:center;width:245px;padding:18px 23px;background:var(--ink);color:#f9eee6;border-radius:40px;font-size:11px;transition:background .2s}.solid-link:hover{background:#77533f}.fine-note{display:block;color:var(--muted);font-size:9px;margin-top:15px}.manifesto{background:#f5ece4;padding:110px 25px;text-align:center;position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.manifesto>.eyebrow{margin-bottom:35px}.manifesto>p:not(.eyebrow){font-family:var(--serif);font-size:clamp(28px,3.5vw,56px);line-height:1.15;letter-spacing:-.02em;margin-bottom:30px}.manifesto-mark{font-family:var(--serif);font-style:italic;font-size:42px;display:block}.ritual-section{padding:120px 9%;display:grid;grid-template-columns:.9fr 1.1fr;gap:10%;background:#e4d4c7}.ritual-intro h2{font-size:clamp(75px,7vw,112px);margin-top:38px}.ritual-intro>p:not(.eyebrow){color:var(--muted);line-height:1.9;font-size:13px}.ritual-seal{margin-top:80px;width:125px;height:125px;display:flex;flex-direction:column;justify-content:center;align-items:center;border:1px solid var(--line);border-radius:50%;font-size:14px;transform:rotate(-13deg);font-family:var(--serif)}.ritual-seal em{font-size:28px}.ritual-builder fieldset{padding:0;margin:0 0 34px;border:0;min-width:0}.ritual-builder legend{font-size:12px;margin-bottom:17px;line-height:1.4}.ritual-builder legend>span{font-size:9px;margin-right:17px;color:var(--muted)}.choice-row{display:flex;gap:10px}.choice-row label{flex:1;cursor:pointer;min-width:0}.choice-row input,.product-choices input{position:absolute;opacity:0;width:1px;height:1px}.choice-row label>span{padding:18px 20px;border:1px solid var(--line);border-radius:3px;display:flex;justify-content:space-between;gap:15px;font-size:11px}.choice-row input:checked+span{background:#f5eae0;border-color:#7c6251}.choice-row input:focus-visible+span,.product-choices input:focus-visible+span{outline:2px solid var(--ink);outline-offset:4px}.choice-row i{font-size:15px;font-style:normal}.three{gap:7px}.three label>span{padding:17px 12px;font-size:10px;justify-content:center}.product-choices{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.product-choices label{cursor:pointer}.product-choices label>span{border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;min-height:158px;padding:18px 5px 14px;border-radius:3px}.product-choices input:checked+span{background:#f4e8dc;border-color:#7c6251}.mini-bottle{display:block;width:28px;height:53px;position:relative;border-radius:6px 6px 5px 5px;margin:9px 0 14px;box-shadow:inset 5px 0 7px #ffffff70,inset -2px 0 3px #0002}.mini-bottle:before{content:'';position:absolute;top:-8px;left:8px;right:8px;height:10px;background:#d0bda7}.mini-bottle:after{content:'';position:absolute;top:-14px;left:5px;width:28px;height:7px;border-radius:4px;background:#f8eee4}.product-choices b{font-weight:400;font-size:12px}.product-choices small{font-size:8px;margin-top:5px;color:var(--muted)}.routine-result{border-top:1px solid var(--line);padding-top:24px;margin:16px 0 27px}.routine-result>.eyebrow{font-size:9px}.routine-result ol{list-style:none;padding:0;margin:20px 0;display:flex;justify-content:space-between;gap:12px}.routine-result li{font-size:11px;max-width:33%;line-height:1.5}.routine-result li>span{display:block;font-size:9px;color:var(--muted);margin-bottom:8px}.routine-result>p:last-child{font-size:10px;color:var(--muted);line-height:1.6}.download-button{width:100%;border:0;border-radius:3px;background:var(--ink);color:#f7ede4;padding:20px 22px;cursor:pointer;display:flex;justify-content:space-between;font-size:11px}.download-button:hover{background:#6f4c39}.builder-note{font-size:9px;text-align:center;margin:13px 0;color:var(--muted);line-height:1.7}footer{padding:60px 5% 22px;background:#f6eee7}.footer-top{display:flex;align-items:flex-start;gap:12%;padding-bottom:65px}.footer-top .wordmark{font-size:65px}.footer-top>p{font-family:var(--serif);font-size:28px;line-height:1.1;margin:0}.footer-top>a{margin-left:auto;font-size:10px;border-bottom:1px solid var(--line);padding-bottom:9px}.footer-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:20px;font-size:8px;color:var(--muted);line-height:1.7}
-@media(min-width:1700px){.chapter-copy{max-width:680px}.body-copy{font-size:17px}.header nav{font-size:13px}.chapter-composition .chapter-copy{max-width:610px}.specimen{font-size:12px}}
-@media(max-width:1000px){.header{padding:0 5%;height:90px}.header-note{display:none}.header nav{gap:20px}.chapter{padding-left:6%;padding-right:6%}h1{font-size:82px}h2{font-size:76px}.chapter-composition .chapter-copy{width:43%}.ingredient-list>div{display:block}.ingredient-list dd{margin:6px 0 0 31px}.chapter-finish .chapter-copy{width:46%}.ritual-section{padding:90px 6%;gap:7%}.ritual-intro h2{font-size:82px}.ritual-builder legend{font-size:11px}}
-@media(max-width:700px){html{scroll-padding-top:25px}.header{height:82px;align-items:center}.wordmark{font-size:39px}.header nav>a:first-child{display:none}.pill{font-size:9px;padding:11px 13px;gap:17px}.scene{min-height:700px}.chapter{min-height:700px;padding:116px 7% 75px;align-items:flex-start}.chapter-copy{width:100%;max-width:none}.chapter-hero .chapter-copy{position:relative;z-index:2}.eyebrow{font-size:8px}h1{font-size:clamp(66px,13.8vw,96px);margin:22px 0 18px}h2{font-size:clamp(64px,13.8vw,92px);margin:19px 0}.body-copy{font-size:11px;line-height:1.7;max-width:68%}.chapter-hero .body-copy{margin-bottom:18px}.chapter-hero .text-link{font-size:9px;gap:28px}.margin-note{display:none}.scroll-cue{left:7%;bottom:65px;font-size:7px}.scene-word{font-size:120vw;left:6%;top:55%;transform:none}.specimen{bottom:12%;right:6%;font-size:7px;gap:9px}.specimen-line{width:25px}.chapter-track{left:7%;right:7%;bottom:25px;font-size:7px;gap:13px}.chapter-composition{justify-content:initial;align-items:flex-start}.chapter-composition .chapter-copy{width:100%}.chapter-composition h2{font-size:70px}.chapter-composition .body-copy{max-width:100%}.ingredient-list{width:55%;margin-top:24px}.ingredient-list>div{padding:10px 0}.ingredient-list dt{font-size:8px}.ingredient-list dt span{font-size:10px;margin-left:10px}.ingredient-list dd{font-size:8px;margin-left:22px}.chapter-side{display:none}.chapter-texture .body-copy{max-width:100%}.variant-picker{margin:23px 0 12px;gap:6px}.variant{font-size:9px;padding:9px 12px 9px 9px;gap:7px}.swatch{height:10px;width:10px}.variant-description{font-size:8px}.texture-caption{right:7%;bottom:14%;font-size:7px}.chapter-finish .chapter-copy{width:100%}.chapter-finish .body-copy{max-width:100%}.solid-link{font-size:10px;padding:15px 20px;width:220px}.fine-note{font-size:8px}.manifesto{padding:80px 22px}.manifesto>p:not(.eyebrow){font-size:32px;line-height:1.14}.manifesto>.eyebrow{font-size:8px;margin-bottom:25px}.ritual-section{padding:75px 7%;display:block}.ritual-intro{margin-bottom:47px;position:relative}.ritual-intro h2{font-size:79px;margin:23px 0}.ritual-intro>p:not(.eyebrow){font-size:11px}.ritual-seal{position:absolute;right:0;bottom:10px;width:88px;height:88px;margin:0;font-size:12px}.ritual-seal em{font-size:21px}.ritual-builder legend{font-size:12px}.choice-row label>span{font-size:10px;padding:17px}.three label>span{font-size:9px;padding:16px 6px}.product-choices small{font-size:7px}.routine-result li{font-size:10px}.footer-top{gap:25%;flex-wrap:wrap;padding-bottom:40px}.footer-top .wordmark{font-size:52px}.footer-top>p{font-size:25px}.footer-top>a{margin:30px 0 0;font-size:9px}.footer-bottom{font-size:7px;flex-wrap:wrap;gap:12px}.footer-bottom>span:nth-child(2){order:3;width:100%}.fallback-product{left:58%;top:50%;transform:scale(.78) rotate(15deg);transform-origin:top left}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.text-link:hover{gap:37px}}@media(prefers-reduced-motion:reduce) and (min-width:701px){.chapter-composition,.chapter-finish{justify-content:flex-start}.chapter-composition .chapter-copy,.chapter-finish .chapter-copy{width:43%}.chapter-side{display:none}}
+@font-face {
+  font-family: Instrument;
+  src: url("./assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Instrument;
+  src: url("./assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: DM;
+  src: url("./assets/fonts/DMSans.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --ink: #493b33;
+  --paper: #eddfd4;
+  --muted: #816e62;
+  --line: rgba(73, 59, 51, 0.23);
+  --peach: #dba99a;
+  --serif: Instrument, Georgia, serif;
+  --sans: DM, Arial, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+body:after {
+  content: "";
+  position: fixed;
+  z-index: 30;
+  pointer-events: none;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.8' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+button,
+input {
+  font: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  color: inherit;
+}
+button,
+a,
+input {
+  outline-offset: 5px;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ink);
+}
+.skip {
+  position: fixed;
+  left: 20px;
+  top: -90px;
+  background: var(--ink);
+  color: white;
+  padding: 15px;
+  z-index: 100;
+}
+.skip:focus {
+  top: 12px;
+}
+.header {
+  height: 100px;
+  padding: 0 4.4%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+.wordmark {
+  font-family: var(--serif);
+  font-size: 49px;
+  line-height: 1;
+  letter-spacing: -3px;
+  position: relative;
+}
+.wordmark > span {
+  font-family: var(--sans);
+  letter-spacing: 0;
+  font-size: 9px;
+  position: absolute;
+  right: -12px;
+  top: 4px;
+}
+.header-note {
+  font-size: 11px;
+  color: var(--muted);
+  padding-top: 9px;
+}
+.header nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  font-size: 11px;
+}
+.pill {
+  border: 1px solid var(--line);
+  border-radius: 40px;
+  padding: 13px 18px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  font-size: 12px;
+  min-height: 44px;
+}
+.pill:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.story {
+  position: relative;
+}
+.scene {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 650px;
+  margin-bottom: -100svh;
+  background: radial-gradient(
+    ellipse at 55% 42%,
+    #f8eae2 0,
+    #eddfd4 57%,
+    #dac6b6 100%
+  );
+  overflow: hidden;
+}
+.scene-word {
+  position: absolute;
+  font-family: var(--serif);
+  font-size: clamp(260px, 42vw, 760px);
+  line-height: 0.7;
+  letter-spacing: -0.075em;
+  color: #fff6ef;
+  opacity: 0.55;
+  top: 37%;
+  left: 44%;
+  transform: translateX(-13%);
+  user-select: none;
+}
+.scene canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.fallback-product {
+  position: absolute;
+  left: 63%;
+  top: 27%;
+  height: 360px;
+  width: 145px;
+  transform: rotate(15deg);
+  z-index: 1;
+  filter: drop-shadow(20px 35px 20px #50301a2c);
+}
+.fallback-bottle {
+  height: 285px;
+  position: absolute;
+  bottom: 0;
+  width: 145px;
+  background: linear-gradient(100deg, #f4d5c2, #d4a58c 65%, #edc8ac);
+  border-radius: 30px 30px 25px 25px;
+  text-align: center;
+  box-shadow:
+    inset 10px 0 20px #fff5,
+    inset -6px 0 10px #5b37282a;
+}
+.fallback-bottle b {
+  display: block;
+  font-family: var(--serif);
+  font-size: 43px;
+  margin-top: 62px;
+  font-weight: 400;
+}
+.fallback-bottle span {
+  font-size: 8px;
+  line-height: 1.7;
+}
+.fallback-neck {
+  position: absolute;
+  top: 42px;
+  left: 49px;
+  width: 47px;
+  height: 40px;
+  background: #c5b59c;
+}
+.fallback-pump {
+  position: absolute;
+  top: 12px;
+  left: 39px;
+  height: 42px;
+  width: 100px;
+  border-radius: 13px 14px 3px 4px;
+  background: #f3eee5;
+}
+.webgl .fallback-product {
+  display: none;
+}
+.specimen {
+  position: absolute;
+  z-index: 3;
+  right: 6.5%;
+  bottom: 20%;
+  display: flex;
+  gap: 18px;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  align-items: center;
+}
+.specimen-line {
+  height: 1px;
+  width: 55px;
+  background: var(--line);
+}
+.chapter-track {
+  position: absolute;
+  z-index: 3;
+  bottom: 35px;
+  left: 4.4%;
+  right: 4.4%;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+.chapter-track > div {
+  height: 1px;
+  background: var(--line);
+  flex: 1;
+}
+.chapter-track i {
+  display: block;
+  background: var(--ink);
+  height: 1px;
+  width: 0;
+  transform-origin: left;
+}
+.chapters {
+  position: relative;
+  z-index: 4;
+  pointer-events: none;
+}
+.chapter {
+  height: 100svh;
+  min-height: 650px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 120px 8% 110px;
+}
+.chapter-copy {
+  max-width: 560px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.tiny-star {
+  font-size: 16px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+h1,
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.94;
+}
+h1 {
+  font-size: clamp(72px, 7.8vw, 128px);
+  margin: 32px 0 28px;
+}
+h2 {
+  font-size: clamp(69px, 7.3vw, 116px);
+  margin: 26px 0;
+}
+h1 em,
+h2 em {
+  font-weight: 400;
+}
+.body-copy {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+.chapter a,
+.chapter button {
+  pointer-events: auto;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 37px;
+  font-size: 11px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.text-link span {
+  font-size: 18px;
+}
+.text-link:hover {
+  gap: 47px;
+}
+.margin-note {
+  position: absolute;
+  right: 4.4%;
+  top: 125px;
+  font-size: 9px;
+  line-height: 1.7;
+  text-align: right;
+  color: var(--muted);
+}
+.scroll-cue {
+  position: absolute;
+  left: 8%;
+  bottom: 84px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+.scroll-cue i {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 200;
+}
+.chapter-composition,
+.chapter-finish {
+  justify-content: flex-end;
+}
+.chapter-composition .chapter-copy {
+  width: 39%;
+  max-width: 500px;
+}
+.ingredient-list {
+  margin: 30px 0 0;
+  border-top: 1px solid var(--line);
+  width: 100%;
+}
+.ingredient-list > div {
+  border-bottom: 1px solid var(--line);
+  padding: 13px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ingredient-list dt {
+  font-size: 12px;
+  color: var(--muted);
+}
+.ingredient-list dt span {
+  font-size: 12px;
+  margin-left: 18px;
+  color: var(--ink);
+}
+.ingredient-list dd {
+  font-size: 12px;
+  margin-left: 15px;
+  color: var(--muted);
+}
+.chapter-side {
+  position: absolute;
+  left: 4.4%;
+  top: 50%;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.variant-picker {
+  display: flex;
+  gap: 8px;
+  margin: 35px 0 15px;
+  pointer-events: auto;
+  flex-wrap: wrap;
+}
+.variant {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 10px 12px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-height: 44px;
+}
+.variant.active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.swatch {
+  display: block;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px #fff3;
+}
+.calm {
+  background: #d9ac98;
+}
+.dew {
+  background: #b8c6b2;
+}
+.restore {
+  background: #b4a2b6;
+}
+.variant-description {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 300px;
+}
+.texture-caption {
+  position: absolute;
+  right: 5%;
+  bottom: 18%;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  line-height: 1.8;
+}
+.chapter-finish .chapter-copy {
+  width: 43%;
+  max-width: 550px;
+}
+.solid-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 245px;
+  padding: 18px 23px;
+  background: var(--ink);
+  color: #f9eee6;
+  border-radius: 40px;
+  font-size: 12px;
+  transition: background 0.2s;
+  min-height: 44px;
+}
+.solid-link:hover {
+  background: #77533f;
+}
+.fine-note {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 15px;
+}
+.manifesto {
+  background: #f5ece4;
+  padding: 110px 25px;
+  text-align: center;
+  position: relative;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.manifesto > .eyebrow {
+  margin-bottom: 35px;
+}
+.manifesto > p:not(.eyebrow) {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 30px;
+}
+.manifesto-mark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 42px;
+  display: block;
+}
+.ritual-section {
+  padding: 120px 9%;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 10%;
+  background: #e4d4c7;
+}
+.ritual-intro h2 {
+  font-size: clamp(75px, 7vw, 112px);
+  margin-top: 38px;
+}
+.ritual-intro > p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 12px;
+}
+.ritual-seal {
+  margin-top: 80px;
+  width: 125px;
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 14px;
+  transform: rotate(-13deg);
+  font-family: var(--serif);
+}
+.ritual-seal em {
+  font-size: 28px;
+}
+.ritual-builder fieldset {
+  padding: 0;
+  margin: 0 0 34px;
+  border: 0;
+  min-width: 0;
+}
+.ritual-builder legend {
+  font-size: 12px;
+  margin-bottom: 17px;
+  line-height: 1.4;
+}
+.ritual-builder legend > span {
+  font-size: 9px;
+  margin-right: 17px;
+  color: var(--muted);
+}
+.choice-row {
+  display: flex;
+  gap: 10px;
+}
+.choice-row label {
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+}
+.choice-row input,
+.product-choices input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.choice-row label > span {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 12px;
+}
+.choice-row input:checked + span {
+  background: #f5eae0;
+  border-color: #7c6251;
+}
+.choice-row input:focus-visible + span,
+.product-choices input:focus-visible + span {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+.choice-row i {
+  font-size: 15px;
+  font-style: normal;
+}
+.three {
+  gap: 7px;
+}
+.three label > span {
+  padding: 17px 12px;
+  font-size: 12px;
+  justify-content: center;
+}
+.product-choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+}
+.product-choices label {
+  cursor: pointer;
+}
+.product-choices label > span {
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 158px;
+  padding: 18px 5px 14px;
+  border-radius: 3px;
+}
+.product-choices input:checked + span {
+  background: #f4e8dc;
+  border-color: #7c6251;
+}
+.mini-bottle {
+  display: block;
+  width: 28px;
+  height: 53px;
+  position: relative;
+  border-radius: 6px 6px 5px 5px;
+  margin: 9px 0 14px;
+  box-shadow:
+    inset 5px 0 7px #ffffff70,
+    inset -2px 0 3px #0002;
+}
+.mini-bottle:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  right: 8px;
+  height: 10px;
+  background: #d0bda7;
+}
+.mini-bottle:after {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 5px;
+  width: 28px;
+  height: 7px;
+  border-radius: 4px;
+  background: #f8eee4;
+}
+.product-choices b {
+  font-weight: 400;
+  font-size: 12px;
+}
+.product-choices small {
+  font-size: 12px;
+  margin-top: 5px;
+  color: var(--muted);
+}
+.routine-result {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  margin: 16px 0 27px;
+}
+.routine-result > .eyebrow {
+  font-size: 9px;
+}
+.routine-result ol {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.routine-result li {
+  font-size: 12px;
+  max-width: 33%;
+  line-height: 1.5;
+}
+.routine-result li > span {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.routine-result > p:last-child {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.download-button {
+  width: 100%;
+  border: 0;
+  border-radius: 3px;
+  background: var(--ink);
+  color: #f7ede4;
+  padding: 20px 22px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+}
+.download-button:hover {
+  background: #6f4c39;
+}
+.builder-note {
+  font-size: 9px;
+  text-align: center;
+  margin: 13px 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+footer {
+  padding: 60px 5% 22px;
+  background: #f6eee7;
+}
+.footer-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12%;
+  padding-bottom: 65px;
+}
+.footer-top .wordmark {
+  font-size: 65px;
+}
+.footer-top > p {
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1.1;
+  margin: 0;
+}
+.footer-top > a {
+  margin-left: auto;
+  font-size: 10px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 9px;
+}
+.footer-bottom {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 8px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+@media (min-width: 1700px) {
+  .chapter-copy {
+    max-width: 680px;
+  }
+  .body-copy {
+    font-size: 17px;
+  }
+  .header nav {
+    font-size: 13px;
+  }
+  .chapter-composition .chapter-copy {
+    max-width: 610px;
+  }
+  .specimen {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1000px) {
+  .header {
+    padding: 0 5%;
+    height: 90px;
+  }
+  .header-note {
+    display: none;
+  }
+  .header nav {
+    gap: 20px;
+  }
+  .chapter {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+  h1 {
+    font-size: 82px;
+  }
+  h2 {
+    font-size: 76px;
+  }
+  .chapter-composition .chapter-copy {
+    width: 43%;
+  }
+  .ingredient-list > div {
+    display: block;
+  }
+  .ingredient-list dd {
+    margin: 6px 0 0 31px;
+    font-size: 12px;
+  }
+  .chapter-finish .chapter-copy {
+    width: 46%;
+  }
+  .ritual-section {
+    padding: 90px 6%;
+    gap: 7%;
+  }
+  .ritual-intro h2 {
+    font-size: 82px;
+  }
+  .ritual-builder legend {
+    font-size: 11px;
+  }
+}
+@media (max-width: 700px) {
+  html {
+    scroll-padding-top: 25px;
+  }
+  .header {
+    height: 82px;
+    align-items: center;
+  }
+  .wordmark {
+    font-size: 39px;
+  }
+  .header nav > a:first-child {
+    display: none;
+  }
+  .pill {
+    font-size: 12px;
+    padding: 11px 13px;
+    gap: 17px;
+    min-height: 44px;
+  }
+  .scene {
+    min-height: 700px;
+  }
+  .chapter {
+    min-height: 700px;
+    padding: 116px 7% 75px;
+    align-items: flex-start;
+  }
+  .chapter-copy {
+    width: 100%;
+    max-width: none;
+  }
+  .chapter-hero .chapter-copy {
+    position: relative;
+    z-index: 2;
+  }
+  .eyebrow {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: clamp(66px, 13.8vw, 96px);
+    margin: 22px 0 18px;
+  }
+  h2 {
+    font-size: clamp(64px, 13.8vw, 92px);
+    margin: 19px 0;
+  }
+  .body-copy {
+    font-size: 11px;
+    line-height: 1.7;
+    max-width: 68%;
+  }
+  .chapter-hero .body-copy {
+    margin-bottom: 18px;
+  }
+  .chapter-hero .text-link {
+    font-size: 12px;
+    gap: 28px;
+    min-height: 44px;
+  }
+  .margin-note {
+    display: none;
+  }
+  .scroll-cue {
+    left: 7%;
+    bottom: 65px;
+    font-size: 7px;
+  }
+  .scene-word {
+    font-size: 120vw;
+    left: 6%;
+    top: 55%;
+    transform: none;
+  }
+  .specimen {
+    bottom: 12%;
+    right: 6%;
+    font-size: 7px;
+    gap: 9px;
+  }
+  .specimen-line {
+    width: 25px;
+  }
+  .chapter-track {
+    left: 7%;
+    right: 7%;
+    bottom: 25px;
+    font-size: 7px;
+    gap: 13px;
+  }
+  .chapter-composition {
+    justify-content: initial;
+    align-items: flex-start;
+  }
+  .chapter-composition .chapter-copy {
+    width: 100%;
+  }
+  .chapter-composition h2 {
+    font-size: 70px;
+  }
+  .chapter-composition .body-copy {
+    max-width: 100%;
+  }
+  .ingredient-list {
+    width: 55%;
+    margin-top: 24px;
+  }
+  .ingredient-list > div {
+    padding: 10px 0;
+  }
+  .ingredient-list dt {
+    font-size: 12px;
+  }
+  .ingredient-list dt span {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .ingredient-list dd {
+    font-size: 12px;
+    margin-left: 22px;
+  }
+  .chapter-side {
+    display: none;
+  }
+  .chapter-texture .body-copy {
+    max-width: 100%;
+  }
+  .variant-picker {
+    margin: 23px 0 12px;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .variant {
+    font-size: 12px;
+    padding: 10px 12px;
+    gap: 7px;
+    min-height: 44px;
+  }
+  .swatch {
+    height: 10px;
+    width: 10px;
+  }
+  .variant-description {
+    font-size: 12px;
+  }
+  .texture-caption {
+    right: 7%;
+    bottom: 14%;
+    font-size: 7px;
+  }
+  .chapter-finish .chapter-copy {
+    width: 100%;
+  }
+  .chapter-finish .body-copy {
+    max-width: 100%;
+  }
+  .solid-link {
+    font-size: 12px;
+    padding: 15px 20px;
+    width: 220px;
+    min-height: 44px;
+  }
+  .fine-note {
+    font-size: 12px;
+  }
+  .manifesto {
+    padding: 80px 22px;
+  }
+  .manifesto > p:not(.eyebrow) {
+    font-size: 32px;
+    line-height: 1.14;
+  }
+  .manifesto > .eyebrow {
+    font-size: 8px;
+    margin-bottom: 25px;
+  }
+  .ritual-section {
+    padding: 75px 7%;
+    display: block;
+  }
+  .ritual-intro {
+    margin-bottom: 47px;
+    position: relative;
+  }
+  .ritual-intro h2 {
+    font-size: 79px;
+    margin: 23px 0;
+  }
+  .ritual-intro > p:not(.eyebrow) {
+    font-size: 12px;
+  }
+  .ritual-seal {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    width: 88px;
+    height: 88px;
+    margin: 0;
+    font-size: 12px;
+  }
+  .ritual-seal em {
+    font-size: 21px;
+  }
+  .ritual-builder legend {
+    font-size: 12px;
+  }
+  .choice-row label > span {
+    font-size: 12px;
+    padding: 17px;
+  }
+  .three label > span {
+    font-size: 12px;
+    padding: 16px 6px;
+  }
+  .product-choices small {
+    font-size: 12px;
+  }
+  .routine-result li {
+    font-size: 12px;
+  }
+  .footer-top {
+    gap: 25%;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+  }
+  .footer-top .wordmark {
+    font-size: 52px;
+  }
+  .footer-top > p {
+    font-size: 25px;
+  }
+  .footer-top > a {
+    margin: 30px 0 0;
+    font-size: 9px;
+  }
+  .footer-bottom {
+    font-size: 7px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom > span:nth-child(2) {
+    order: 3;
+    width: 100%;
+  }
+  .fallback-product {
+    left: 58%;
+    top: 50%;
+    transform: scale(0.78) rotate(15deg);
+    transform-origin: top left;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    transition: none !important;
+    animation: none !important;
+  }
+  .text-link:hover {
+    gap: 37px;
+  }
+}
+@media (prefers-reduced-motion: reduce) and (min-width: 701px) {
+  .chapter-composition,
+  .chapter-finish {
+    justify-content: flex-start;
+  }
+  .chapter-composition .chapter-copy,
+  .chapter-finish .chapter-copy {
+    width: 43%;
+  }
+  .chapter-side {
+    display: none;
+  }
+}
 /* Second edition: tactile resin, macro scale and a photographic pause. */
-.scene{background:radial-gradient(ellipse at 52% 42%,#f3e7dc 0,#e7d6c7 58%,#d2bca7 100%)}.scene:before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,#c8d1b6,transparent 75%);opacity:var(--reveal,0)}.scene-word{opacity:.45}.manifesto{padding:125px 5%;min-height:680px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}.botanical{position:absolute;left:0;top:0;width:44%;height:100%;margin:0;overflow:hidden}.botanical img{height:100%;width:100%;object-fit:cover;object-position:50% 52%}.botanical figcaption{position:absolute;bottom:22px;left:25px;font-size:7px;letter-spacing:.11em;color:#fff;text-shadow:0 1px 5px #0008}.manifesto>.eyebrow,.manifesto>p:not(.eyebrow),.manifesto>.manifesto-mark{margin-left:46%;position:relative}.manifesto>p:not(.eyebrow){font-size:clamp(25px,3vw,48px)}@media(max-width:700px){.manifesto{padding:65px 7%;padding-top:440px;min-height:780px}.botanical{width:100%;height:390px}.botanical img{object-position:50% 62%}.manifesto>.eyebrow,.manifesto>p:not(.eyebrow),.manifesto>.manifesto-mark{margin-left:0}.manifesto>p:not(.eyebrow){font-size:30px}}
+.scene {
+  background: radial-gradient(
+    ellipse at 52% 42%,
+    #f3e7dc 0,
+    #e7d6c7 58%,
+    #d2bca7 100%
+  );
+}
+.scene:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #c8d1b6, transparent 75%);
+  opacity: var(--reveal, 0);
+}
+.scene-word {
+  opacity: 0.45;
+}
+.manifesto {
+  padding: 125px 5%;
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.botanical {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 44%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.botanical img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 52%;
+}
+.botanical figcaption {
+  position: absolute;
+  bottom: 22px;
+  left: 25px;
+  font-size: 7px;
+  letter-spacing: 0.11em;
+  color: #fff;
+  text-shadow: 0 1px 5px #0008;
+}
+.manifesto > .eyebrow,
+.manifesto > p:not(.eyebrow),
+.manifesto > .manifesto-mark {
+  margin-left: 46%;
+  position: relative;
+}
+.manifesto > p:not(.eyebrow) {
+  font-size: clamp(25px, 3vw, 48px);
+}
+@media (max-width: 700px) {
+  .manifesto {
+    padding: 65px 7%;
+    padding-top: 440px;
+    min-height: 780px;
+  }
+  .botanical {
+    width: 100%;
+    height: 390px;
+  }
+  .botanical img {
+    object-position: 50% 62%;
+  }
+  .manifesto > .eyebrow,
+  .manifesto > p:not(.eyebrow),
+  .manifesto > .manifesto-mark {
+    margin-left: 0;
+  }
+  .manifesto > p:not(.eyebrow) {
+    font-size: 30px;
+  }
+}
+
+/* Mobile reading and touch layout. */
+@media (max-width: 700px) {
+  .body-copy {
+    font-size: 13px;
+    max-width: 90%;
+  }
+  .chapter-hero .body-copy {
+    max-width: 80%;
+  }
+  .variant-description {
+    font-size: 12px;
+    max-width: 240px;
+  }
+  .chapter-texture .body-copy,
+  .chapter-texture .variant-description {
+    color: var(--ink);
+    background: #eddfd4f7;
+    box-shadow: 0 0 0 7px #eddfd4f7;
+    border-radius: 2px;
+  }
+  .chapter-texture .variant:not(.active) {
+    color: var(--ink);
+    background: var(--paper);
+  }
+  .ingredient-list {
+    width: 70%;
+  }
+  .ingredient-list dt,
+  .ingredient-list dd {
+    font-size: 12px;
+  }
+  .ritual-intro > p:not(.eyebrow) {
+    font-size: 14px;
+  }
+  .ritual-seal {
+    position: static;
+    margin-top: 25px;
+  }
+  .product-choices {
+    grid-template-columns: 1fr;
+  }
+  .product-choices label > span {
+    min-height: 100px;
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    gap: 8px 16px;
+    justify-items: start;
+    padding: 16px;
+  }
+  .product-choices small {
+    font-size: 12px;
+    grid-column: 2;
+  }
+  .routine-result li {
+    font-size: 14px;
+  }
+  .routine-result > p {
+    font-size: 13px;
+  }
+  .choice-row label > span {
+    font-size: 12px;
+  }
+  .three label > span {
+    padding: 16px 4px;
+  }
+  .fine-note {
+    font-size: 12px;
+  }
+}
+@media (max-height: 700px) and (max-width: 700px) {
+  .scene {
+    min-height: 0;
+  }
+  .chapter {
+    height: auto;
+    min-height: 100svh;
+    padding: 105px 7% 90px;
+  }
+  h1 {
+    font-size: 14vw;
+    margin: 18px 0;
+  }
+  h2,
+  .chapter-composition h2 {
+    font-size: 13vw;
+  }
+  .chapter-composition {
+    min-height: 690px;
+  }
+  .chapter-texture {
+    min-height: 620px;
+  }
+  .chapter-hero .body-copy {
+    max-width: 85%;
+    font-size: 12px;
+  }
+  .chapter-hero .text-link {
+    margin-top: 8px;
+  }
+  .scroll-cue {
+    bottom: 55px;
+  }
+  .specimen {
+    bottom: 12%;
+  }
+  .chapter-track {
+    bottom: 18px;
+  }
+  .texture-caption {
+    bottom: 12%;
+  }
+}
+@media (max-height: 500px) and (min-width: 701px) {
+  .header {
+    height: 65px;
+  }
+  .scene {
+    min-height: 0;
+  }
+  .chapter {
+    height: auto;
+    min-height: 110svh;
+    padding: 85px 5% 80px;
+  }
+  .chapter-copy,
+  .chapter-composition .chapter-copy,
+  .chapter-finish .chapter-copy {
+    width: 46%;
+    max-width: 46%;
+  }
+  h1 {
+    font-size: 14vh;
+    margin: 12px 0;
+  }
+  h2,
+  .chapter-composition h2 {
+    font-size: 13vh;
+  }
+  .body-copy {
+    font-size: 12px;
+  }
+  .ingredient-list {
+    width: 100%;
+  }
+  .chapter-composition {
+    min-height: 600px;
+  }
+  .chapter-texture {
+    min-height: 500px;
+  }
+  .scroll-cue {
+    bottom: 40px;
+  }
+  .chapter-track {
+    bottom: 12px;
+  }
+  .specimen {
+    bottom: 14%;
+  }
+  .variant-picker {
+    gap: 6px;
+  }
+  .variant {
+    font-size: 12px;
+  }
+  .texture-caption {
+    bottom: 16%;
+  }
+}
