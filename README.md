@@ -17,3 +17,7 @@ The photographic scene uses transparent responsive WebP assets. Animation runs o
 The brand and products are fictional. The ritual is illustrative, not personalised medical advice. Product imagery was generated for this concept with the built-in ChatGPT image tool, then converted to responsive WebP. The botanical interlude remains a locally stored licensed photograph. Font licenses are in assets/fonts; photographic attribution is in assets/LICENSES.md.
 
 Chromium viewport and interaction checks cover mobile and desktop layouts. They are not physical-device benchmarks.
+
+## iPhone Safari composition, October2026
+
+The mobile experience now reserves explicit photographic or live-model frames in normal document flow. It does not move the hero object into arbitrary gaps between text blocks. Header, content, forms and footer share the mobile reading grid; desktop retains its cinematic composition. Exact local static font weights avoid variable-default differences across browser engines. Relevant touch interactions, portrait/landscape transitions and live scene visibility were checked in Playwright WebKit. This is browser emulation, not a physical iPhone test.

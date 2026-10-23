@@ -1,4 +1,4 @@
-import { setProductVariant } from "./scene.js?v=b34f8ddd70f5877bd51720c6598609de47932655ae386bb64ca67bfa3427fbcc";
+import { setProductVariant } from "./scene.js?v=e8ba5d282a3b9f8bb538096112ddd3a2661e06f854cb5249df56fc9b18e94549";
 
 const variants = {
   calm: { name: "Calm", description: "Calm / a comforting daily moisturiser." },
