@@ -141,6 +141,7 @@ button:focus-visible {
 }
 .story {
   position: relative;
+  overflow: clip;
 }
 .scene {
   position: sticky;
@@ -522,9 +523,13 @@ h2 em {
 .ritual-section {
   padding: 120px 9%;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 10%;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(36px, 6vw, 100px);
   background: #e4d4c7;
+}
+.ritual-intro,
+.ritual-builder {
+  min-width: 0;
 }
 .ritual-intro h2 {
   font-size: clamp(75px, 7vw, 112px);
@@ -686,14 +691,15 @@ h2 em {
   list-style: none;
   padding: 0;
   margin: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 .routine-result li {
   font-size: 12px;
-  max-width: 33%;
-  line-height: 1.5;
+  min-width: 0;
+  max-width: none;
+  line-height: 1.6;
 }
 .routine-result li > span {
   display: block;
@@ -733,9 +739,10 @@ footer {
   background: #f6eee7;
 }
 .footer-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 12%;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  align-items: start;
+  gap: clamp(30px, 7vw, 110px);
   padding-bottom: 65px;
 }
 .footer-top .wordmark {
@@ -1046,9 +1053,9 @@ footer {
     font-size: 12px;
   }
   .footer-top {
-    gap: 25%;
-    flex-wrap: wrap;
-    padding-bottom: 40px;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 28px 35px;
+    padding-bottom: 32px;
   }
   .footer-top .wordmark {
     font-size: 52px;
@@ -1057,16 +1064,24 @@ footer {
     font-size: 25px;
   }
   .footer-top > a {
-    margin: 30px 0 0;
-    font-size: 9px;
+    grid-column: 1 / -1;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin: 0;
+    font-size: 12px;
   }
   .footer-bottom {
-    font-size: 7px;
-    flex-wrap: wrap;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) max-content;
+    align-items: start;
+    font-size: 11px;
+    gap: 10px 20px;
   }
   .footer-bottom > span:nth-child(2) {
     order: 3;
+    grid-column: 1 / -1;
     width: 100%;
   }
   .fallback-product {
@@ -1231,22 +1246,51 @@ footer {
     min-height: 100px;
     display: grid;
     grid-template-columns: 45px 1fr;
-    gap: 8px 16px;
+    grid-template-rows: auto auto;
+    gap: 4px 16px;
     justify-items: start;
-    padding: 16px;
+    align-content: center;
+    padding: 20px 16px;
+  }
+  .product-choices .mini-bottle {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: center;
+    margin: 0;
+  }
+  .product-choices b {
+    grid-column: 2;
+    grid-row: 1;
   }
   .product-choices small {
     font-size: 12px;
     grid-column: 2;
+    grid-row: 2;
+    margin-top: 0;
+  }
+  .routine-result ol {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin: 24px 0;
   }
   .routine-result li {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    align-items: baseline;
+    gap: 8px;
     font-size: 14px;
+  }
+  .routine-result li > span {
+    margin: 0;
   }
   .routine-result > p {
     font-size: 13px;
   }
   .choice-row label > span {
+    min-height: 54px;
+    align-items: center;
     font-size: 12px;
+    line-height: 1.4;
   }
   .three label > span {
     padding: 16px 4px;
@@ -1354,4 +1398,14 @@ footer {
   .texture-caption {
     bottom: 16%;
   }
+}
+
+.ritual-intro h2 {
+  line-height: 1.08;
+}
+.ritual-seal {
+  line-height: 1.2;
+}
+.footer-top > p {
+  line-height: 1.25;
 }

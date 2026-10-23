@@ -1,27 +1,19 @@
 # VEIL
 
-Independent skincare brand concept by Polina Koljanikova. A complete static website with a procedural Three.js product scene and a working personal ritual builder.
+Independent skincare concept by Polina Koljanikova. A static cinematic product site with generated photographic product assets, local Baskervville and Wix Madefor Text, and a working personal ritual builder.
 
 ## Run
 
-Serve this directory with any static HTTP server. Open `index.html` through HTTP. ES modules cannot reliably load by opening the file directly.
-
-There is no build step, package installation, runtime CDN, API key or remote font request. The directory can be published as the root of a dedicated GitHub Pages repository. `.nojekyll` is included.
+Serve the directory with any static HTTP server. No build, package installation, API key, runtime CDN or external font request is needed. Publish the root on its dedicated GitHub Pages repository. ES modules require HTTP.
 
 ## Interactions
 
-Native scrolling drives four reversible chapters: the finished product, an open composition, texture and variants, and the daily ritual. The sculpted coated-resin bottle, pump, paper label, instanced ingredient pearls and studio environment are generated locally. A separate botanical photograph is stored locally with attribution.
+Native scrolling moves the same high resolution product cutout through four chapters. Its position, scale and angle follow scroll in both directions. Calm, Dew and Restore select a photographic colour treatment and update the ritual selection. The builder supports morning or evening, skin feel and product. Saving downloads the current routine as a plain text file without submitting a form.
 
-Calm, Dew and Restore update the 3D bottle and ritual selection. The builder accepts morning or evening, skin feel and product. Its three steps and notes change immediately. The save button downloads a readable text summary. It does not submit a form or create an account.
+The photographic scene uses transparent responsive WebP assets. Animation runs on input and resize, with no idle render loop or WebGL dependency. Phones use measured reading gaps. Reduced motion uses still chapter states.
 
-## Access and resilience
+## Boundaries and credits
 
-The site includes semantic headings, native inputs, visible focus, keyboard-accessible controls, skip navigation, live result announcements, local fonts and an independent mobile composition. Reduced motion removes the rotating product, pointer parallax, ingredient movement, scene relocation and smooth anchor scrolling. WebGL failure or context loss reveals a CSS product illustration while the rest of the site remains usable.
+The brand and products are fictional. The ritual is illustrative, not personalised medical advice. Product imagery was generated for this concept with the built-in ChatGPT image tool, then converted to responsive WebP. The botanical interlude remains a locally stored licensed photograph. Font licenses are in assets/fonts; photographic attribution is in assets/LICENSES.md.
 
-## Boundaries
-
-VEIL is a fictional portfolio concept. There is no real product inventory, payment, delivery or medical recommendation. Product visuals are original procedural geometry or CSS. The botanical interlude is a licensed photograph. Font and Three.js licenses are recorded in `assets/LICENSES.md`.
-
-## Checks
-
-Syntax and local asset checks are recorded by the integrating project. Browser composition, scroll reversal, mobile viewport and download behavior must be checked against the exact published revision. Source inspection is not a claim of physical-device testing.
+Chromium viewport and interaction checks cover mobile and desktop layouts. They are not physical-device benchmarks.

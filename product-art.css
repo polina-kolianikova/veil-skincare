@@ -1,0 +1,18 @@
+.product-art { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:2; contain:layout style; }
+.image-object { position:absolute; left:0; top:0; margin:0; width:min(43vw,59svh); aspect-ratio:2/3; transform:translate3d(70vw,48svh,0) translate(-50%,-50%) rotate(8deg); transform-origin:50% 58%; }
+.image-object img { display:block; width:100%; height:100%; object-fit:contain; }
+.chapter-track i { transform-origin:left; width:100%; }
+.art-veil .image-object { transition:filter .5s ease; }
+body[data-variant="dew"] .art-veil .image-object { filter:hue-rotate(39deg) saturate(.72); }
+body[data-variant="restore"] .art-veil .image-object { filter:hue-rotate(317deg) saturate(.7); }
+@media(max-width:700px) { .image-object { width:min(66vw,37svh); transform:translate3d(61vw,70svh,0) translate(-50%,-50%) rotate(6deg); } }
+@media(prefers-reduced-motion:reduce) { .image-object { transition:none; } }
+.product-choices .mini-bottle { background:transparent url('./assets/product/veil-bottle-640.webp') center/contain no-repeat; border:0; box-shadow:none; width:44px; height:66px; border-radius:0; }
+.product-choices .mini-bottle::before,.product-choices .mini-bottle::after {display:none;}
+.product-choices .mini-bottle.dew {filter:hue-rotate(39deg) saturate(.72);}
+.product-choices .mini-bottle.restore {filter:hue-rotate(317deg) saturate(.7);}
+.chapter-hero h1 { font-size:clamp(72px,6.4vw,106px); line-height:1.1; }
+@media(max-width:700px) {
+ .chapter-hero h1 { font-size:clamp(39px,11.7vw,58px); line-height:1.13; }
+ .specimen,.texture-caption,.chapter-track,.margin-note,.chapter-side,.scroll-cue { display:none; }
+}
